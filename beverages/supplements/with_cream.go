@@ -1,4 +1,4 @@
-package suplements
+package supplements
 
 import "github.com/myugen/go_beverages_price_refactoring_kata/beverages"
 

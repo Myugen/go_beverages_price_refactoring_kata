@@ -3,7 +3,7 @@ package beverages_test
 import (
 	"testing"
 
-	"github.com/myugen/go_beverages_price_refactoring_kata/beverages/suplements"
+	"github.com/myugen/go_beverages_price_refactoring_kata/beverages/supplements"
 
 	"github.com/stretchr/testify/assert"
 
@@ -22,35 +22,35 @@ func TestCoffee_Price(t *testing.T) {
 func TestCoffeeWithCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var coffeeWithCinnamon beverages.Beverage
-	coffeeWithCinnamon = suplements.NewWithCinnamon(beverages.NewCoffee())
+	coffeeWithCinnamon = supplements.NewWithCinnamon(beverages.NewCoffee())
 	assertt.InDelta(1.25, coffeeWithCinnamon.Price(), precision)
 }
 
 func TestCoffeeWithMilk_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var coffeeWithMilk beverages.Beverage
-	coffeeWithMilk = suplements.NewWithMilk(beverages.NewCoffee())
+	coffeeWithMilk = supplements.NewWithMilk(beverages.NewCoffee())
 	assertt.InDelta(1.3, coffeeWithMilk.Price(), precision)
 }
 
 func TestCoffeeWithMilkAndCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var coffeeWithMilkAndCinammon beverages.Beverage
-	coffeeWithMilkAndCinammon = suplements.NewWithCinnamon(suplements.NewWithMilk(beverages.NewCoffee()))
+	coffeeWithMilkAndCinammon = supplements.NewWithCinnamon(supplements.NewWithMilk(beverages.NewCoffee()))
 	assertt.InDelta(1.35, coffeeWithMilkAndCinammon.Price(), precision)
 }
 
 func TestCoffeeWithMilkAndCream_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var coffeeWithMilkAndCream beverages.Beverage
-	coffeeWithMilkAndCream = suplements.NewWithCream(suplements.NewWithMilk(beverages.NewCoffee()))
+	coffeeWithMilkAndCream = supplements.NewWithCream(supplements.NewWithMilk(beverages.NewCoffee()))
 	assertt.InDelta(1.45, coffeeWithMilkAndCream.Price(), precision)
 }
 
 func TestCoffeeWithMilkAndCreamAndCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var coffeeWithMilkAndCreamAndCinnamon beverages.Beverage
-	coffeeWithMilkAndCreamAndCinnamon = suplements.NewWithCinnamon(suplements.NewWithCream(suplements.NewWithMilk(beverages.NewCoffee())))
+	coffeeWithMilkAndCreamAndCinnamon = supplements.NewWithCinnamon(supplements.NewWithCream(supplements.NewWithMilk(beverages.NewCoffee())))
 	assertt.InDelta(1.5, coffeeWithMilkAndCreamAndCinnamon.Price(), precision)
 }
 
@@ -64,21 +64,21 @@ func TestTea_Price(t *testing.T) {
 func TestTeaWithCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var teaWithCinnamon beverages.Beverage
-	teaWithCinnamon = suplements.NewWithCinnamon(beverages.NewTea())
+	teaWithCinnamon = supplements.NewWithCinnamon(beverages.NewTea())
 	assertt.InDelta(1.55, teaWithCinnamon.Price(), precision)
 }
 
 func TestTeaWithMilk_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var teaWithMilk beverages.Beverage
-	teaWithMilk = suplements.NewWithMilk(beverages.NewTea())
+	teaWithMilk = supplements.NewWithMilk(beverages.NewTea())
 	assertt.InDelta(1.6, teaWithMilk.Price(), precision)
 }
 
 func TestTeaWithMilkAndCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var teaWithMilkAndCinnamon beverages.Beverage
-	teaWithMilkAndCinnamon = suplements.NewWithCinnamon(suplements.NewWithMilk(beverages.NewTea()))
+	teaWithMilkAndCinnamon = supplements.NewWithCinnamon(supplements.NewWithMilk(beverages.NewTea()))
 	assertt.InDelta(1.65, teaWithMilkAndCinnamon.Price(), precision)
 }
 
@@ -92,20 +92,20 @@ func TestHotChocolate_Price(t *testing.T) {
 func TestHotChocolateWithCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var hotChocolateWithCinnamon beverages.Beverage
-	hotChocolateWithCinnamon = suplements.NewWithCinnamon(beverages.NewHotChocolate())
+	hotChocolateWithCinnamon = supplements.NewWithCinnamon(beverages.NewHotChocolate())
 	assertt.InDelta(1.5, hotChocolateWithCinnamon.Price(), precision)
 }
 
 func TestHotChocolateWithCream_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var hotChocolateWithCream beverages.Beverage
-	hotChocolateWithCream = suplements.NewWithCream(beverages.NewHotChocolate())
+	hotChocolateWithCream = supplements.NewWithCream(beverages.NewHotChocolate())
 	assertt.InDelta(1.6, hotChocolateWithCream.Price(), precision)
 }
 
 func TestHotChocolateWithCreamAndCinnamon_Price(t *testing.T) {
 	assertt := assert.New(t)
 	var hotChocolateWithCreamAndCinnamon beverages.Beverage
-	hotChocolateWithCreamAndCinnamon = suplements.NewWithCinnamon(suplements.NewWithCream(beverages.NewHotChocolate()))
+	hotChocolateWithCreamAndCinnamon = supplements.NewWithCinnamon(supplements.NewWithCream(beverages.NewHotChocolate()))
 	assertt.InDelta(1.65, hotChocolateWithCreamAndCinnamon.Price(), precision)
 }
